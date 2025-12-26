@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block title %}Диаграммы продаж{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-funnel-fill"></i> Фильтры
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Год:</label>
+                        <select id="yearFilter" class="form-select">
+                            <option value="">Все годы</option>
+                            {% for year in years %}
+                            <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Товары:</label>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="productDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Выберите товары
+                            </button>
+                            <ul class="dropdown-menu w-100 p-2" aria-labelledby="productDropdown" onclick="event.stopPropagation();">
+                                {% for product in products %}
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input product-checkbox" type="checkbox" value="{{ product }}" id="product{{ forloop.counter }}">
+                                        <label class="form-check-label" for="product{{ forloop.counter }}">
+                                            {{ product }}
+                                        </label>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button id="applyFilters" class="btn btn-primary w-100">
+                            <i class="bi bi-search"></i> Применить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-graph-up"></i> Линейный график - Выручка по месяцам
+            </div>
+            <div class="card-body">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-bar-chart-fill"></i> Гистограмма - Количество продаж по товарам
+            </div>
+            <div class="card-body">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-pie-chart-fill"></i> Круговая диаграмма - Доля выручки по товарам
+            </div>
+            <div class="card-body">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+    let lineChart, barChart, pieChart;
+    
+    function loadCharts() {
+        const year = $('#yearFilter').val();
+        const selectedProducts = [];
+        $('.product-checkbox:checked').each(function() {
+            selectedProducts.push($(this).val());
+        });
+        
+        const params = new URLSearchParams();
+        if (year) params.append('year', year);
+        selectedProducts.forEach(product => {
+            params.append('products[]', product);
+        });
+        
+        // Линейный график
+        $.get(`/api/chart-data/?type=line&${params.toString()}`, function(data) {
+            const ctx = document.getElementById('lineChart').getContext('2d');
+            if (lineChart) lineChart.destroy();
+            lineChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: true },
+                        title: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+        });
+        
+        // Гистограмма
+        $.get(`/api/chart-data/?type=bar&${params.toString()}`, function(data) {
+            const ctx = document.getElementById('barChart').getContext('2d');
+            if (barChart) barChart.destroy();
+            barChart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+        });
+        
+        // Круговая диаграмма
+        $.get(`/api/chart-data/?type=pie&${params.toString()}`, function(data) {
+            const ctx = document.getElementById('pieChart').getContext('2d');
+            if (pieChart) pieChart.destroy();
+            pieChart = new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        });
+    }
+    
+    $(document).ready(function() {
+        loadCharts();
+        $('#applyFilters').click(loadCharts);
+    });
+</script>
+{% endblock %}

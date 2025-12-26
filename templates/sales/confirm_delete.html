@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Подтверждение удаления{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <i class="bi bi-exclamation-triangle"></i> Подтверждение удаления
+            </div>
+            <div class="card-body">
+                <p class="mb-4">Вы уверены, что хотите удалить эту запись?</p>
+                
+                <div class="alert alert-info">
+                    <strong>Данные записи:</strong><br>
+                    <strong>Год:</strong> {{ sale.year }}<br>
+                    <strong>Месяц:</strong> {{ sale.get_month_display }}<br>
+                    <strong>Товар:</strong> {{ sale.product_name }}<br>
+                    <strong>Количество:</strong> {{ sale.quantity }}<br>
+                    <strong>Выручка:</strong> {{ sale.revenue|floatformat:2 }} руб.
+                </div>
+
+                <div class="alert alert-warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <strong>Внимание!</strong> Это действие нельзя отменить.
+                </div>
+
+                <form method="post" class="d-inline">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'sales:manage' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Отмена
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Удалить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

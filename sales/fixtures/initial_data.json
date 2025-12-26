@@ -1,0 +1,398 @@
+[
+  {
+    "model": "sales.monthlysales",
+    "pk": 1,
+    "fields": {
+      "year": 2024,
+      "month": 1,
+      "product_name": "Ноутбук",
+      "quantity": 45,
+      "revenue": "2250000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 2,
+    "fields": {
+      "year": 2024,
+      "month": 2,
+      "product_name": "Ноутбук",
+      "quantity": 52,
+      "revenue": "2600000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 3,
+    "fields": {
+      "year": 2024,
+      "month": 3,
+      "product_name": "Ноутбук",
+      "quantity": 48,
+      "revenue": "2400000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 4,
+    "fields": {
+      "year": 2024,
+      "month": 4,
+      "product_name": "Ноутбук",
+      "quantity": 55,
+      "revenue": "2750000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 5,
+    "fields": {
+      "year": 2024,
+      "month": 5,
+      "product_name": "Ноутбук",
+      "quantity": 60,
+      "revenue": "3000000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 6,
+    "fields": {
+      "year": 2024,
+      "month": 6,
+      "product_name": "Ноутбук",
+      "quantity": 58,
+      "revenue": "2900000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 7,
+    "fields": {
+      "year": 2024,
+      "month": 7,
+      "product_name": "Ноутбук",
+      "quantity": 62,
+      "revenue": "3100000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 8,
+    "fields": {
+      "year": 2024,
+      "month": 8,
+      "product_name": "Ноутбук",
+      "quantity": 50,
+      "revenue": "2500000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 9,
+    "fields": {
+      "year": 2024,
+      "month": 9,
+      "product_name": "Ноутбук",
+      "quantity": 65,
+      "revenue": "3250000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 10,
+    "fields": {
+      "year": 2024,
+      "month": 10,
+      "product_name": "Ноутбук",
+      "quantity": 70,
+      "revenue": "3500000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 11,
+    "fields": {
+      "year": 2024,
+      "month": 11,
+      "product_name": "Ноутбук",
+      "quantity": 68,
+      "revenue": "3400000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 12,
+    "fields": {
+      "year": 2024,
+      "month": 12,
+      "product_name": "Ноутбук",
+      "quantity": 75,
+      "revenue": "3750000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 13,
+    "fields": {
+      "year": 2024,
+      "month": 1,
+      "product_name": "Смартфон",
+      "quantity": 120,
+      "revenue": "3600000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 14,
+    "fields": {
+      "year": 2024,
+      "month": 2,
+      "product_name": "Смартфон",
+      "quantity": 135,
+      "revenue": "4050000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 15,
+    "fields": {
+      "year": 2024,
+      "month": 3,
+      "product_name": "Смартфон",
+      "quantity": 140,
+      "revenue": "4200000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 16,
+    "fields": {
+      "year": 2024,
+      "month": 4,
+      "product_name": "Смартфон",
+      "quantity": 130,
+      "revenue": "3900000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 17,
+    "fields": {
+      "year": 2024,
+      "month": 5,
+      "product_name": "Смартфон",
+      "quantity": 145,
+      "revenue": "4350000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 18,
+    "fields": {
+      "year": 2024,
+      "month": 6,
+      "product_name": "Смартфон",
+      "quantity": 150,
+      "revenue": "4500000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 19,
+    "fields": {
+      "year": 2024,
+      "month": 7,
+      "product_name": "Смартфон",
+      "quantity": 155,
+      "revenue": "4650000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 20,
+    "fields": {
+      "year": 2024,
+      "month": 8,
+      "product_name": "Смартфон",
+      "quantity": 148,
+      "revenue": "4440000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 21,
+    "fields": {
+      "year": 2024,
+      "month": 9,
+      "product_name": "Смартфон",
+      "quantity": 160,
+      "revenue": "4800000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 22,
+    "fields": {
+      "year": 2024,
+      "month": 10,
+      "product_name": "Смартфон",
+      "quantity": 165,
+      "revenue": "4950000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 23,
+    "fields": {
+      "year": 2024,
+      "month": 11,
+      "product_name": "Смартфон",
+      "quantity": 170,
+      "revenue": "5100000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 24,
+    "fields": {
+      "year": 2024,
+      "month": 12,
+      "product_name": "Смартфон",
+      "quantity": 180,
+      "revenue": "5400000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 25,
+    "fields": {
+      "year": 2024,
+      "month": 1,
+      "product_name": "Планшет",
+      "quantity": 30,
+      "revenue": "900000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 26,
+    "fields": {
+      "year": 2024,
+      "month": 2,
+      "product_name": "Планшет",
+      "quantity": 35,
+      "revenue": "1050000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 27,
+    "fields": {
+      "year": 2024,
+      "month": 3,
+      "product_name": "Планшет",
+      "quantity": 32,
+      "revenue": "960000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 28,
+    "fields": {
+      "year": 2024,
+      "month": 4,
+      "product_name": "Планшет",
+      "quantity": 38,
+      "revenue": "1140000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 29,
+    "fields": {
+      "year": 2024,
+      "month": 5,
+      "product_name": "Планшет",
+      "quantity": 40,
+      "revenue": "1200000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 30,
+    "fields": {
+      "year": 2024,
+      "month": 6,
+      "product_name": "Планшет",
+      "quantity": 42,
+      "revenue": "1260000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 31,
+    "fields": {
+      "year": 2024,
+      "month": 7,
+      "product_name": "Планшет",
+      "quantity": 45,
+      "revenue": "1350000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 32,
+    "fields": {
+      "year": 2024,
+      "month": 8,
+      "product_name": "Планшет",
+      "quantity": 38,
+      "revenue": "1140000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 33,
+    "fields": {
+      "year": 2024,
+      "month": 9,
+      "product_name": "Планшет",
+      "quantity": 48,
+      "revenue": "1440000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 34,
+    "fields": {
+      "year": 2024,
+      "month": 10,
+      "product_name": "Планшет",
+      "quantity": 50,
+      "revenue": "1500000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 35,
+    "fields": {
+      "year": 2024,
+      "month": 11,
+      "product_name": "Планшет",
+      "quantity": 52,
+      "revenue": "1560000.00"
+    }
+  },
+  {
+    "model": "sales.monthlysales",
+    "pk": 36,
+    "fields": {
+      "year": 2024,
+      "month": 12,
+      "product_name": "Планшет",
+      "quantity": 55,
+      "revenue": "1650000.00"
+    }
+  }
+]
